@@ -1,0 +1,147 @@
+/* ===== 大自然配色 ===== */
+:root {
+  --forest: #2f5d3a;      /* 深森林綠 */
+  --leaf: #5b8c51;        /* 葉綠 */
+  --moss: #a3c585;        /* 苔蘚綠 */
+  --sand: #f4f1e8;        /* 米白沙色 */
+  --bark: #6b4f3a;        /* 樹皮棕 */
+  --text: #2b2b2b;
+  --card-bg: #ffffff;
+  --radius: 14px;
+}
+
+/* ===== 基本設定 ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--sand);
+  overflow-wrap: break-word;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== 頁首 ===== */
+.site-header {
+  background: linear-gradient(135deg, var(--forest), var(--leaf));
+  color: #fff;
+  text-align: center;
+  padding: 64px 0 56px;
+  border-bottom-left-radius: 40% 24px;
+  border-bottom-right-radius: 40% 24px;
+}
+
+.greeting {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+.site-header h1 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  letter-spacing: 0.08em;
+  margin: 4px 0 8px;
+}
+
+.tagline {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 4px 16px;
+  border-radius: 999px;
+}
+
+/* ===== 主要內容 ===== */
+main {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border-left: 6px solid var(--leaf);
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(47, 93, 58, 0.08);
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: var(--forest);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 學習興趣：標籤樣式 */
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-list li {
+  background: var(--moss);
+  color: var(--forest);
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+/* 技能：網格卡片 */
+.skill-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.skill-list li {
+  background: var(--sand);
+  border: 1px solid var(--moss);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.skill-list h3 {
+  font-size: 1.05rem;
+  color: var(--bark);
+}
+
+/* ===== 頁尾 ===== */
+.site-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+  background: var(--forest);
+  padding: 20px 0;
+}
+
+/* ===== 手機版調整 ===== */
+@media (max-width: 480px) {
+  .site-header {
+    padding: 48px 0 40px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+}
